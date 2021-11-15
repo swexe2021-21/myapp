@@ -1,5 +1,4 @@
 <% @radios.each do |radio| %>
-    <%= radio.title %>
-    <%= radio.url %>
-    <%= radio.text %>
+    <%= link_to radio.title ,radio.url %>
+    <p>キーワード:<%= radio.text %></p> 
 <% end %>
