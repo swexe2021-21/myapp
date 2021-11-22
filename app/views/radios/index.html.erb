@@ -1,4 +1,14 @@
-<% @radios.each do |radio| %>
-    <%= link_to radio.title ,radio.url %>
-    <p>キーワード:<%= radio.text %></p> 
-<% end %>
+匿名ラジオ検索くん
+<div class="search-form">
+  <%= form_with url: search_path, method: :get, local: true do |f| %>
+    <%= f.text_field :keyword, value: @keyword %>
+    <%= f.submit "検索" %>
+  <% end %>
+</div>
+
+<div class="radio-list">
+  <% @radios.each do |radio| %>
+    <p><%= radio.title %></p>
+  <% end %>
+</div>
+
