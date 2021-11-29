@@ -1,14 +1,16 @@
 匿名ラジオ検索くん
+<p><%= link_to '新規追加', '/radios/new' %></p>
+
 <div class="search-form">
-  <%= form_with url: search_path, method: :get, local: true do |f| %>
-    <%= f.text_field :keyword, value: @keyword %>
-    <%= f.submit "検索" %>
+  <%= form_tag '/radios/search', method: :post do %>
+    <%= text_field_tag :keyword %>
+    <%= submit_tag "検索" %>
   <% end %>
 </div>
 
 <div class="radio-list">
   <% @radios.each do |radio| %>
-    <p><%= radio.title %></p>
+    <p><%= link_to radio.title ,radio.url %></p>
   <% end %>
 </div>
 

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   resources :radios
   root 'radios#index'
-  get 'search' => 'posts#search'
+  post '/radios/search', to: 'radios#search'
 end

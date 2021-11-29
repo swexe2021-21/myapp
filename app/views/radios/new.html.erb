@@ -1,0 +1,9 @@
+<%= form_for @radios , url: {action: :create} do |f| %>
+    <%= f.label :title, 'タイトル' %>
+    <%= f.text_field :title %>
+    <%= f.label :url, 'URL' %>
+    <%= f.text_field :url %>
+    <%= f.label :text, 'Text' %>
+    <%= f.text_field :text %>
+    <%= f.submit '登録' %>
+<% end %>
