@@ -14,9 +14,8 @@ class RadiosController < ApplicationController
     redirect_to '/'
   end
   
-  
   def search
-    @radios = Radio.where(title: params[:keyword]).or(Radio.where(text: params[:keyword]))
+    @radios = Radio.where("title like ?","%#{params[:keyword]}%")
     render "index"
   end
 end
