@@ -16,7 +16,7 @@ class RadiosController < ApplicationController
   
   
   def search
-    @radios = Radio.where(text: params[:keyword])
+    @radios = Radio.where(title: params[:keyword]).or(Radio.where(text: params[:keyword]))
     render "index"
   end
 end
