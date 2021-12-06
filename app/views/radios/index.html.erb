@@ -11,7 +11,7 @@
 <div class="radio-list">
   <% @radios.each do |radio| %>
     <p>
-      <%= link_to radio.text ,radio.url %>
+      <%= link_to radio.text,radio.url %>
       <%= link_to '削除',"/radios/#{radio.id}",method: :delete %>
     </p>
   <% end %>
