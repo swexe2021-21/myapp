@@ -8,8 +8,8 @@ class RadiosController < ApplicationController
   end
   
   def create
-    radios = Radio.new(title: params[:radios][:title], url:
-    params[:radios][:url], text:[:radios][:text])
+    radios = Radio.new(title: params[:radio][:title], 
+    url: params[:radio][:url], text: params[:radio][:text])
     radios.save
     redirect_to '/'
   end
