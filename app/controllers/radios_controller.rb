@@ -14,6 +14,12 @@ class RadiosController < ApplicationController
     redirect_to '/'
   end
   
+  def destroy
+    radio = Radio.find(params[:id])
+    radio.destroy
+    redirect_to '/'
+  end
+  
   def search
     @radios = Radio.where("title like ?","%#{params[:keyword]}%")
     render "index"

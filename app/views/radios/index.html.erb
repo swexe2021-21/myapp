@@ -1,4 +1,4 @@
-匿名ラジオ検索くん
+匿名ラジオ名言検索
 <p><%= link_to '新規追加', '/radios/new' %></p>
 
 <div class="search-form">
@@ -10,7 +10,10 @@
 
 <div class="radio-list">
   <% @radios.each do |radio| %>
-    <p><%= link_to radio.title ,radio.url %></p>
+    <p>
+      <%= link_to radio.text ,radio.url %>
+      <%= link_to '削除',"/radios/#{radio.id}",method: :delete %>
+    </p>
   <% end %>
 </div>
 
