@@ -1,3 +1,16 @@
+header{
+    background-color: rgba(205, 92, 92, 1);
+    top: 0px;
+    width: 100%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgba(205, 92, 92, 1);
+}
+
 a {
     text-decoration:none; 
 }

@@ -1,21 +1,15 @@
-<center>匿名ラジオ名言検索</center>
+<header>
+  <center>匿名ラジオ名言検索</center>
+  <div class="search-form">
+    <%= form_tag '/radios/search', method: :post do %>
+      <p><center><%= text_field_tag :keyword %><%= submit_tag "検索" %></center></p>
+    <% end %>
+  </div>
+  
+
+</header>
 
   <%= image_tag "/myapp/app/assets/images/character_ebi_fry.png" %>
-
-
-<div class="search-form">
-  <%= form_tag '/radios/search', method: :post do %>
-    <p><center><%= text_field_tag :keyword %><%= submit_tag "検索" %></center></p>
-  <% end %>
-</div>
-
-<div class="random-show">
-    <p><center><a>
-    <%= link_to 'ランダム', "/radios/show" %>
-    </a></center></p>
-</div>
-
-<p><center><a><%= link_to '新規追加', '/radios/new' %></a></center></p>
 
 <br>
 
@@ -28,3 +22,9 @@
   <% end %>
 </div>
 
+<footer>
+  <center><a><%= link_to '新規追加', '/radios/new' %></a></center>
+    <div class="random-show">
+    <center><a><%= link_to 'ランダム', "/radios/show" %></a></center>
+  </div>
+</footer>
