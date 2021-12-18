@@ -8,9 +8,9 @@ class RadiosController < ApplicationController
   end
   
   def create
-    radios = Radio.new(title: params[:radio][:title], 
+    @radios = Radio.new(title: params[:radio][:title], 
     url: params[:radio][:url], text: params[:radio][:text])
-    radios.save
+    @radios.save
     redirect_to '/'
   end
   
@@ -22,6 +22,10 @@ class RadiosController < ApplicationController
   
   def search
     @radios = Radio.where("title like ?","%#{params[:keyword]}%")
-    render "index"
+    render "/"
+  end
+  
+  def show
+    @radios = Radio.all.sample(1) 
   end
 end
