@@ -21,8 +21,8 @@ class RadiosController < ApplicationController
   end
   
   def search
-    @radios = Radio.where("title like ?","%#{params[:keyword]}%")
-    render "/"
+    @radios = Radio.where("text like ?","%#{params[:keyword]}%")
+    render "index"
   end
   
   def show
